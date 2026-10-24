@@ -21,7 +21,7 @@ include device/sony/shinano-common/BoardConfigCommon.mk
 DEVICE_PATH := device/sony/z3c
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := z3c
+TARGET_OTA_ASSERT_DEVICE := z3c,aries,D5803,D5833
 
 # Kernel properties
 TARGET_KERNEL_CONFIG := lineageos_shinano_aries_defconfig
@@ -38,3 +38,4 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Inherit from proprietary files
 include vendor/sony/z3c/BoardConfigVendor.mk
+BOARD_KERNEL_SEPARATED_DTB := false
