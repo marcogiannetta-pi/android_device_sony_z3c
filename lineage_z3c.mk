@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from z3c device
 $(call inherit-product, device/sony/z3c/z3c.mk)
 
+# Disable Aperture (HAL3 only); use Camera2 for HAL1
+PRODUCT_NO_CAMERA := true
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
