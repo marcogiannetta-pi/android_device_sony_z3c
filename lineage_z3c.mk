@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Enable root/insecure ADB during boot
+WITH_ADB_INSECURE := true
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -34,7 +37,13 @@ PRODUCT_MANUFACTURER := Sony
 
 PRODUCT_GMS_CLIENTID_BASE := android-sony
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="D5803-user 6.0.1 23.5.A.1.291 2769308465 release-keys"
+# PRODUCT_BUILD_PROP_OVERRIDES += \
+#     PRIVATE_BUILD_DESC="D5803-user 6.0.1 23.5.A.1.291 2769308465 release-keys"
+
 
 BUILD_FINGERPRINT := Sony/D5803/D5803:6.0.1/23.5.A.1.291/2769308465:user/release-keys
+
+# Disable compressed APEX for Linux 3.4 loopback mounting
+PRODUCT_COMPRESSED_APEX := false
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
